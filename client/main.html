@@ -1,0 +1,54 @@
+<head>
+  <title>thoughtbox</title>
+</head>
+
+<body>
+    <div class="container">
+      <div class="row-fluid">
+        <div class="col12">
+          <h1>Main Box.</h1>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="col12" id="col1">
+          
+          Double Click anywhere to add a box
+          {{#each boxes}}
+            {{>box}}
+          {{/each}}
+        </div>
+
+      </div>
+      
+    </div>
+
+
+<!-- Our thought box styling -->
+
+    <div class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" contenteditable="true" id="box_title">{{box_title}}</h4>
+          </div>
+          <div class="modal-body">
+            <p contenteditable="true" id="box_body">{{box_body}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="formSubmit" class="btn btn-primary">Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+ </body>
+
+
+ <template name="box">
+          <div id="box" class="box well" style="{top:{{x}}px; left:{{y}}px;}">
+           {{title}}
+          </div>
+ </template>
